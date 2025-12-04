@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 import os
-flom glob import glob
+from glob import glob
 
 package_name = 'mypkg'
 
