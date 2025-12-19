@@ -1,8 +1,8 @@
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Int16
+from std_msgs.msg import Int16s
 
-class Talker():
+class Coordinates_Talker():
     def __init__(self,nh):
         self.pub = node.create_publisher(Int16, "countup", 10)
         self.n = 0
@@ -14,8 +14,8 @@ class Talker():
         self.pub.publish(msg)
         self.n += 1
 
-#def main():
-rclpy.init()
-node = Node("talker")
-talker = Talker(node)
-rclpy.spin(node)
+def main():
+    rclpy.init()
+    node = Node("talker")
+    talker = Talker(node)
+    rclpy.spin(node)

@@ -12,11 +12,12 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        (os.path.join('share', package_name), glob('launch/*.launch.py'))
+        (os.path.join('share', package_name), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name), ['cordinatedata.csv']),
     ],
-    install_requires=['setuptools'],
+    install_requires=['setuptools','numpy','scipy'],
     zip_safe=True,
-    maintainer='shogo',
+    maintainer='Shogo Takizawa',
     maintainer_email='usomatu_daamyi826@uso.com',
     description='ロボットシステム学',
     license='BSD-3-Clause',
@@ -27,8 +28,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'talker = mypkg.talker:main',
-            'listener = mypkg.listener:main',
+             'complemented = mypkg.complement:main',
+             'calcurate = mypkg.calcurate:main',
         ],
     },
 )
