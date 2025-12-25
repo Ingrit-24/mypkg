@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 class OdometryPlotter(Node):
     def __init__(self):
-        super().__init__('odometory')
+        super().__init__('odometry')
         self.sub = self.create_subscription(Float32MultiArray, "output", self.cb,10)
         
         self.x = 0.0

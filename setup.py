@@ -29,8 +29,8 @@ setup(
     entry_points={
         'console_scripts': [
              'complement = mypkg.complement:main',
-             'calcurate = mypkg.calcurate:main',
-             'odometory = mypkg.output:main',
+             'calculate = mypkg.calculate:main',
+             'odometry = mypkg.odometry:main',
         ],
     },
 )

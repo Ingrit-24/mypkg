@@ -12,11 +12,11 @@ def generate_launch_description():
         )
     calcurate = launch_ros.actions.Node(
         package='mypkg',
-        executable='calcurate',
+        executable='calculate',
         )
     output = launch_ros.actions.Node(
         package='mypkg',
-        executable='odometory',
+        executable='odometry',
         output='screen',
         )
 

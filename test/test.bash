@@ -9,6 +9,6 @@ dir=~
 cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
-timeout 11 ros2 launch mypkg drowing_robot.launch.py > /tmp/mypkg.log
+timeout 11 ros2 launch mypkg drawing_robot.launch.py > /tmp/mypkg.log
 
 cat /tmp/mypkg.log | grep 'time:9.0'
