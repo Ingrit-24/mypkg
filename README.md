@@ -27,7 +27,12 @@ $ ros2 launch mypkg drawing_robot.launch.py
 - また、受け取ったデータをもとに、ロボットの動きをシミュレーションします。
 
 ### complementトピック
-- データ型はPoint。X-y-Zのデータを流せるが使用用途から、ｚは常に０
+- データ型はPoint。x-y-z座標のデータを流せるが使用用途から、ｚは常に0になっている。
+### outputトピック
+- データ型はFloat32MultiArray。配列の番号が以下のように対応している。
+array[0] = t [s]
+array[1] = vr [mm/s]
+array[2] = vl [mm/s]
 ## ライセンス
 - このROS2パッケージは、**三条項BSDライセンスの下**、再配布及び使用が許可されます。
 - © 2025 Shogo Takizawa
