@@ -30,7 +30,7 @@ setup(
         'console_scripts': [
              'complement = mypkg.complement:main',
              'calcurate = mypkg.calcurate:main',
-             'output = mypkg.output:main',
+             'odometory = mypkg.output:main',
         ],
     },
 )

@@ -16,7 +16,7 @@ def generate_launch_description():
         )
     output = launch_ros.actions.Node(
         package='mypkg',
-        executable='output',
+        executable='odometory',
         output='screen',
         )
 
