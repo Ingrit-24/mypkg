@@ -1,7 +1,7 @@
 # お絵かきロボット軌道計画＆シミュレーション
 ![test](https://github.com/Ingrit-24/mypkg/actions/workflows/test.yml/badge.svg)
 
-##　デモの動かし方
+## デモの動かし方
 ```bash
 $ cd ~/ros2_ws
 $ colcon bulid
