@@ -7,8 +7,8 @@ $ cd ~/ros2_ws
 $ colcon bulid
 $ ros2 launch mypkg drowing_robot.launch.py
 ```
-- ターミナルで上記のように実行すると下のようなシミュレーションが動き出す
-https://github.com/Ingrit-24/mypkg/issues/4#issue-3761786472
+- ターミナルで上記のように実行すると下のようなシミュレーションが動き出す。
+![image](https://github.com/Ingrit-24/mypkg/issues/4#issue-3761786472)
 # complementノード
 - calcurateノードはcoordinatesdata.csvに保存されたx-y座標データをスプライン補完し、complementというトピックにx-y座標データのメッセージを流します。
 ## ライセンス
