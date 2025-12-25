@@ -12,12 +12,8 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-<<<<<<< HEAD
-        (os.path.join('share', package_name), glob('launch/*.launch.py'))
-=======
         (os.path.join('share', package_name), glob('launch/*.launch.py')),
         (os.path.join('share', package_name), ['coordinatesdata.csv']),
->>>>>>> dev
     ],
     install_requires=['setuptools','numpy','scipy','matplotlib'],
     zip_safe=True,
