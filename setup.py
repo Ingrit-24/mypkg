@@ -13,9 +13,9 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name), glob('launch/*.launch.py')),
-        (os.path.join('share', package_name), ['cordinatedata.csv']),
+        (os.path.join('share', package_name), ['coordinatesdata.csv']),
     ],
-    install_requires=['setuptools','numpy','scipy'],
+    install_requires=['setuptools','numpy','scipy','matplotlib'],
     zip_safe=True,
     maintainer='Shogo Takizawa',
     maintainer_email='usomatu_daamyi826@uso.com',
@@ -28,8 +28,9 @@ setup(
     },
     entry_points={
         'console_scripts': [
-             'complemented = mypkg.complement:main',
+             'complement = mypkg.complement:main',
              'calcurate = mypkg.calcurate:main',
+             'output = mypkg.output:main',
         ],
     },
 )
