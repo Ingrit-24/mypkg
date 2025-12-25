@@ -12,11 +12,16 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+<<<<<<< HEAD
         (os.path.join('share', package_name), glob('launch/*.launch.py'))
+=======
+        (os.path.join('share', package_name), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name), ['coordinatesdata.csv']),
+>>>>>>> dev
     ],
-    install_requires=['setuptools'],
+    install_requires=['setuptools','numpy','scipy','matplotlib'],
     zip_safe=True,
-    maintainer='shogo',
+    maintainer='Shogo Takizawa',
     maintainer_email='usomatu_daamyi826@uso.com',
     description='ロボットシステム学',
     license='BSD-3-Clause',
@@ -27,8 +32,9 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'talker = mypkg.talker:main',
-            'listener = mypkg.listener:main',
+             'complement = mypkg.complement:main',
+             'calcurate = mypkg.calcurate:main',
+             'output = mypkg.output:main',
         ],
     },
 )
