@@ -8,6 +8,7 @@
 ```bash
 $ cd ~/ros2_ws
 $ colcon build
+$ . install/setup.bash
 $ ros2 launch mypkg drawing_robot.launch.py
 ```
 - ターミナルで上記のように実行すると下のようなシミュレーションが動き出します。初期状態のパッケージでは雪だるまが書けます。
@@ -17,9 +18,9 @@ $ ros2 launch mypkg drawing_robot.launch.py
 ### complementノード
 - complementノードはcoordinatesdata.csvに保存されたx-y座標データをスプライン補完により滑らかな軌道に変換し、complementトピックにx-y座標データのメッセージを流します。
 ### calculateノード
-- calcurateノードはcomplementトピックに流れるメッセージを受け取ります。受け取ったメッセージをもとに逆運動学を解き、ロボットの左右車輪速度を求めて、outputトピックに時刻と左右車輪速度のデータを流します。
+- calculateノードはcomplementトピックに流れるメッセージを受け取ります。受け取ったメッセージをもとに逆運動学を解き、ロボットの左右車輪速度を求めて、outputトピックに時刻と左右車輪速度のデータを流します。
 ### odometryノード
-- odometoryノードはoutputトピックに流れるメッセージを受け取り、データをターミナルに表示します。
+- odometryノードはoutputトピックに流れるメッセージを受け取り、データをターミナルに表示します。
 ```bash
 [odometory-3] [INFO] [1766668646.721025550] [odometory]: time:0.5 VR:108.63478088378906 VL:100.78079986572266
 [odometory-3] [INFO] [1766668647.212520094] [odometory]: time:1.0 VR:112.56177520751953 VL:96.85380554199219
