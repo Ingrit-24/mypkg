@@ -12,12 +12,14 @@ class OdometryPlotter(Node):
         super().__init__('odometry')
         self.sub = self.create_subscription(Float32MultiArray, "output", self.cb,10)
         
+        self.declare_parameter('dt', 0.5)
+        self.dt = self.get_parameter('dt').value
+        self.declare_parameter('wheel_dist', 150)
+        self.robo_l = self.get_parameter('wheel_dist').value
+        
         self.x = 0.0
         self.y = 0.0
-        self.theta = 0.0
-        
-        self.robo_l = 150.0  
-        self.dt = 0.5        
+        self.theta = 0.0     
 
         self.history_x = [0.0]
         self.history_y = [0.0]

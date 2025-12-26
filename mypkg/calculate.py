@@ -8,10 +8,16 @@ from std_msgs.msg import Float32MultiArray
 import numpy as np
 
 #初期位置＝（０，０）姿勢はｘ軸＋向き
-class Calcurate():
+class Calcurate(Node):
     def __init__(self,nh):
+        super().__init__('calculate')
         self.pub = nh.create_subscription(Point,"complemented",self.cb,10)
         self.out = nh.create_publisher(Float32MultiArray, "output",10)
+        
+        self.declare_parameter('dt', 0.5)
+        self.dt = self.get_parameter('dt').value
+        self.declare_parameter('wheel_dist', 150)
+        self.robo_l = self.get_parameter('wheel_dist').value
         
         self.nh=nh
         self.x1=0
@@ -28,7 +34,6 @@ class Calcurate():
         self.derection1 = 0
         self.derection2 = 0
         
-        self.robo_l=150
         self.matrix=np.array([[1/self.robo_l,-1/self.robo_l],[0.5,0.5]])
         
         
@@ -40,8 +45,8 @@ class Calcurate():
             self.n+=1
             return
         
-        self.xv = (self.x1-self.x2)/0.5
-        self.yv = (self.y1-self.y2)/0.5
+        self.xv = (self.x1-self.x2)/self.dt
+        self.yv = (self.y1-self.y2)/self.dt
         self.cv = np.sqrt(self.xv**2+self.yv**2)
         
         self.derection1=np.arctan2(self.yv,self.xv)
@@ -53,14 +58,14 @@ class Calcurate():
             self.derection2=2*np.pi+self.derection2
         
             
-        self.omega = (self.derection1-self.derection2)/0.5
+        self.omega = (self.derection1-self.derection2)/self.dt
         b = np.array([self.omega,self.cv])
         ans = np.linalg.solve(self.matrix, b)
         
         print(str(self.n)+str(ans))
         
         out = Float32MultiArray()
-        out.data = [float(self.n*0.5),ans[0],ans[1]]
+        out.data = [float(self.n*self.dt),ans[0],ans[1]]
         self.out.publish(out)
         
         self.x2=self.x1

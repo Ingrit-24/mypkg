@@ -11,13 +11,16 @@ import os
 from ament_index_python.packages import get_package_share_directory
 
 
-class Complrment():
+class Complrment(Node):
     def __init__(self,nh):
+        super().__init__('complement')
         self.pub = nh.create_publisher(Point, "complemented",10)
+        self.declare_parameter('dt', 0.5)
+        self.dt = self.get_parameter('dt').value
+        
         self.n = 0
         self.data_x=[]
         self.data_y=[]
-        
         
         package_dir = get_package_share_directory('mypkg')
         csv_path = os.path.join(package_dir, 'coordinatesdata.csv')
@@ -38,7 +41,7 @@ class Complrment():
         self.points = np.vstack((self.x_np,self.y_np)).T
         self.sp_points = make_interp_spline(self.t_np, self.points, k=3)
         
-        self.timer=nh.create_timer(0.5, self.cb)
+        self.timer=nh.create_timer(self.dt, self.cb)
 
     def cb(self):
         if self.n*0.5 > self.t_np[-1]:
