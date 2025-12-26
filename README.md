@@ -1,6 +1,9 @@
 # お絵かきロボット軌道計画＆シミュレーション
 ![test](https://github.com/Ingrit-24/mypkg/actions/workflows/test.yml/badge.svg)
 
+## パッケージ概要
+- このROS2パッケージは二輪駆動の台車を任意の軌道で動かすための軌道計画及びシミュレーションを手助けするためのものです。パッケージ直下のcoordinatesdata.csvに制御周期ごとのX-Y座標を書き込みdrawing_robot.launch.pyを実行すると、シミュレーションが動きます。
+
 ## デモの動かし方
 ```bash
 $ cd ~/ros2_ws
