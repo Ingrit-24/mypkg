@@ -38,7 +38,18 @@ $ ros2 launch mypkg drawing_robot.launch.py
 - array[1] = vr [mm/s]　右車輪速度 
 - array[2] = vl [mm/s]　左車輪速度
 
+## coordinatesdata.csvの形式
+- coordinatesdata.csvには1列目にx座標、２列目にy座標を入れる。
+```csv
+0.000000,0.000000
+52.335956,1.370465
+104.528463,5.478105
+156.434465,12.311659
+207.911691,21.852399
+258.819045,34.074174
+```
 ## 必要なソフトウェア
+- Ubuntu 24.04 LTS
 - ROS2
 ## 依存ライブラリ
 - NumPy
