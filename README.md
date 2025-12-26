@@ -36,6 +36,17 @@ $ ros2 launch mypkg drawing_robot.launch.py
 - array[0] = t [s] 時刻  　　
 - array[1] = vr [mm/s]　右車輪速度 
 - array[2] = vl [mm/s]　左車輪速度
+
+## 必要なソフトウェア
+- ROS2
+## 依存ライブラリ
+- NumPy
+- SciPy
+- Matplotlib
+
+## テスト環境
+- Ubuntu 24.04 LTS
+
 ## ライセンス
 - このROS2パッケージは、**三条項BSDライセンスの下**、再配布及び使用が許可されます。
 - © 2025 Shogo Takizawa
