@@ -22,24 +22,25 @@ $ ros2 launch mypkg drawing_robot.launch.py
 ### odometryノード
 - odometryノードはoutputトピックに流れるメッセージを受け取り、データをターミナルに表示します。
 ```bash
-[odometory-3] [INFO] [1766668646.721025550] [odometory]: time:0.5 VR:108.63478088378906 VL:100.78079986572266
-[odometory-3] [INFO] [1766668647.212520094] [odometory]: time:1.0 VR:112.56177520751953 VL:96.85380554199219
-[odometory-3] [INFO] [1766668647.712805451] [odometory]: time:1.5 VR:112.561767578125 VL:96.85381317138672
-[odometory-3] [INFO] [1766668648.211591123] [odometory]: time:2.0 VR:112.56177520751953 VL:96.85381317138672
-[odometory-3] [INFO] [1766668648.712136761] [odometory]: time:2.5 VR:112.56177520751953 VL:96.85381317138672
+[odometry-3] [INFO] [1766840125.699913951] [odometry]: |time:    0.10|VR:  105.94|VL:  104.37|
+[odometry-3] [INFO] [1766840125.797276240] [odometry]: |time:    0.20|VR:  106.73|VL:  103.58|
+[odometry-3] [INFO] [1766840125.844292783] [odometry]: |time:    0.30|VR:  106.73|VL:  103.58|
+[odometry-3] [INFO] [1766840125.886361024] [odometry]: |time:    0.40|VR:  106.73|VL:  103.58|
+[odometry-3] [INFO] [1766840125.928418837] [odometry]: |time:    0.50|VR:  106.73|VL:  103.58|
+
 ```
 - また、受け取ったデータをもとに、ロボットの動きをシミュレーションします。
 
 ### complementトピック
-- データ型はPoint。x-y-z座標のデータを流せるが使用用途から、ｚは常に0になっている。
+- データ型はPoint。x-y-z座標のデータを流せますが、不要であるためｚは常に0になってます。
 ### outputトピック
-- データ型はFloat32MultiArray。配列の番号が以下のように対応している。
+- データ型はFloat32MultiArray。配列の番号が以下のように対応しています。
 - array[0] = t [s] 時刻  　　
 - array[1] = vr [mm/s]　右車輪速度 
 - array[2] = vl [mm/s]　左車輪速度
 
 ## coordinatesdata.csvの形式
-- coordinatesdata.csvには1列目にx座標、２列目にy座標を入れる。
+- coordinatesdata.csvには1列目にx座標、２列目にy座標を入れてください。
 ```csv
 0.000000,0.000000
 52.335956,1.370465
@@ -48,8 +49,21 @@ $ ros2 launch mypkg drawing_robot.launch.py
         .
         .
 ```
+## drawing_robot.launch.pyについて
+- このlaunchファイルではすべてのノードを一斉に立ち上げることができます。
+- launchファイルの中で以下の３つのパッケージ共通パラメータを設定しています。
+- - 車輪間距離 
+- - 制御周期  
+- - デモ合計時間
+```python
+6 robot_parameters={
+7    "wheel_dist": 130, #車輪間距離 [m]
+8    "dt":0.1,          #制御周期   [s]
+9    "total_time": 120,  #デモ時間   [s]
+10 }
+```
 ## 必要なソフトウェア
-- Ubuntu 24.04 LTS
+- Python
 - ROS2
 ## 依存ライブラリ
 - NumPy

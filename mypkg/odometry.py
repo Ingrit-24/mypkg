@@ -32,15 +32,15 @@ class OdometryPlotter(Node):
         self.ax.set_title("Drowing_Robot_Orbit")
         self.ax.set_xlabel("X [mm]")
         self.ax.set_ylabel("Y [mm]")
-        self.ax.set_xlim(-1200, 1200)
-        self.ax.set_ylim(-200, 3200)
+        self.ax.set_xlim(-1000, 1000)
+        self.ax.set_ylim(-1000, 1000)
         self.ax.set_aspect('equal')
         self.ax.grid(True)
         self.ax.legend()
 
     def cb(self, msg):
         t, vr, vl = msg.data
-        self.get_logger().info(f"time:{msg.data[0]} VR:{msg.data[1]} VL:{msg.data[2]}")
+        self.get_logger().info(f"|time:{msg.data[0]:>8.2f}|VR:{msg.data[1]:>8.2f}|VL:{msg.data[2]:>8.2f}|")
         
         v = (vr + vl) / 2.0
         omega = (vr - vl) / self.robo_l
@@ -52,14 +52,34 @@ class OdometryPlotter(Node):
         self.history_x.append(self.x)
         self.history_y.append(self.y)
         
+        if   max(self.history_x) > 900:
+            if min(self.history_x) < -900:
+                self.ax.set_xlim(min(self.history_x) - 100, max(self.history_x) + 100)
+            else:  
+                self.ax.set_xlim( -1000, max(self.history_x) + 100)
+            
+        elif min(self.history_x) < -900:
+            self.ax.set_xlim(min(self.history_x) - 100 , 1000)
+            
+            
+        if   max(self.history_y) > 900:
+            if min(self.history_y) < -900:
+                self.ax.set_ylim(min(self.history_y) - 100, max(self.history_y) + 100)
+            else:    
+                self.ax.set_ylim( -1000, max(self.history_y) + 100)
+            
+        elif min(self.history_y) < -900:
+            self.ax.set_ylim(min(self.history_y) - 100 , 1000)
+            
+            
         self.line.set_data(self.history_x, self.history_y)
         self.robot_pos.set_data([self.x], [self.y]) 
         
         self.fig.canvas.draw()
         self.fig.canvas.flush_events()
+
         
-        
-        
+            
 def main():
     rclpy.init()
     node = OdometryPlotter()

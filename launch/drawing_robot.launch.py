@@ -4,8 +4,9 @@ import launch.substitutions
 import launch_ros.actions
 
 robot_parameters={
-    "wheel_dist": 100, #車輪間距離　  [m]
-    "dt":0.25           #制御周期      [s]
+    "wheel_dist": 130, #車輪間距離 [m]
+    "dt":0.1,          #制御周期   [s]
+    "total_time": 120,  #デモ時間   [s]
 }
 
 

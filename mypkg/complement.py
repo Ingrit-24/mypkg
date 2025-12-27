@@ -17,6 +17,8 @@ class Complrment(Node):
         self.pub = nh.create_publisher(Point, "complemented",10)
         self.declare_parameter('dt', 0.5)
         self.dt = self.get_parameter('dt').value
+        self.declare_parameter('total_time', 50)
+        self.total_time = self.get_parameter('total_time').value
         
         self.n = 0
         self.data_x=[]
@@ -29,10 +31,11 @@ class Complrment(Node):
             for row in reader:
                 self.data_x.append(float(row[0]))
                 self.data_y.append(float(row[1]))
-
+                
+        self.data_dt=float(self.total_time)/len(self.data_x)
         self.data_t=[]
         for i in range(len(self.data_x)):
-            self.data_t.append(0.5*i)
+            self.data_t.append(self.data_dt*i)
 
         self.x_np = np.array(self.data_x)
         self.y_np = np.array(self.data_y)
@@ -44,12 +47,12 @@ class Complrment(Node):
         self.timer=nh.create_timer(self.dt, self.cb)
 
     def cb(self):
-        if self.n*0.5 > self.t_np[-1]:
+        if self.n*self.dt > self.t_np[-1]:
             self.timer.cancel()
 
         msg = Point()
-        msg.x = float(self.sp_points(self.n*0.5)[0])
-        msg.y = float(self.sp_points(self.n*0.5)[1])
+        msg.x = float(self.sp_points(self.n*self.dt)[0])
+        msg.y = float(self.sp_points(self.n*self.dt)[1])
         msg.z = 0.0
         self.pub.publish(msg)
         self.n += 1
