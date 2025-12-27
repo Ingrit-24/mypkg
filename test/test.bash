@@ -12,3 +12,5 @@ source $dir/.bashrc
 timeout 5 ros2 launch mypkg drawing_robot.launch.py > /tmp/mypkg.log
 
 cat /tmp/mypkg.log | grep '|time:'
+cat /tmp/mypkg.log | grep '|VR:'
+cat /tmp/mypkg.log | grep '|VL:'
