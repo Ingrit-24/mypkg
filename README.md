@@ -2,7 +2,32 @@
 ![test](https://github.com/Ingrit-24/mypkg/actions/workflows/test.yml/badge.svg)
 
 ## パッケージ概要
-- このROS2パッケージは二輪駆動の台車を任意の軌道で動かすための軌道計画及びシミュレーションを手助けするためのものです。パッケージ直下のcoordinatesdata.csvに制御周期ごとのX-Y座標を書き込みdrawing_robot.launch.pyを実行すると、シミュレーションが動きます。
+- このROS2パッケージは二輪駆動の台車を任意の軌道で動かすための軌道計画及びシミュレーションを手助けするためのものです。
+- パッケージ直下のcoordinatesdata.csvに制御周期ごとのX-Y座標を書き込みdrawing_robot.launch.pyを実行すると、シミュレーションが動きます。
+- パッケージの構成は以下のようになっています。
+```bash
+mypkg
+├── LICENCE
+├── README.md
+├── coordinatesdata.csv
+├── launch
+│   └── drawing_robot.launch.py
+├── mypkg
+│   ├── __init__.py
+│   ├── calculate.py
+│   ├── complement.py
+│   └── odometry.py
+├── package.xml
+├── resource
+│   └── mypkg
+├── setup.cfg
+├── setup.py
+└── test
+    ├── test.bash
+    ├── test_copyright.py
+    ├── test_flake8.py
+    └── test_pep257.py
+```
 
 ## デモの動かし方
 ```bash
