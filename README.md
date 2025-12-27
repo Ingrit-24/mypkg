@@ -57,7 +57,7 @@ $ ros2 launch mypkg drawing_robot.launch.py
   - デモ合計時間
 ```python
  6 robot_parameters={
- 7    "wheel_dist": 130, #車輪間距離 [m]
+ 7    "wheel_dist": 130, #車輪間距離 [mm]
  8    "dt":0.1,          #制御周期   [s]
  9    "total_time": 120,  #デモ時間   [s]
 10 }
