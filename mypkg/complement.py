@@ -25,7 +25,7 @@ class Complrment(Node):
         self.data_y=[]
         
         package_dir = get_package_share_directory('mypkg')
-        csv_path = os.path.join(package_dir, 'coordinatesdata.csv')
+        csv_path = os.path.join(package_dir,'data', 'coordinatesdata.csv')
         with open(csv_path,"r",encoding="utf-8") as f:
             reader = csv.reader(f)
             for row in reader:
