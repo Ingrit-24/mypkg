@@ -52,9 +52,9 @@ $ ros2 launch mypkg drawing_robot.launch.py
 ## drawing_robot.launch.pyについて
 - このlaunchファイルではすべてのノードを一斉に立ち上げることができます。
 - launchファイルの中で以下の３つのパッケージ共通パラメータを設定しています。
-- - 車輪間距離 
-- - 制御周期  
-- - デモ合計時間
+  - 車輪間距離 
+  - 制御周期  
+  - デモ合計時間
 ```python
 6 robot_parameters={
 7    "wheel_dist": 130, #車輪間距離 [m]
