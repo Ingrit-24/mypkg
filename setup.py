@@ -21,7 +21,7 @@ setup(
     install_requires=['setuptools','numpy','scipy','matplotlib'],
     zip_safe=True,
     maintainer='Shogo Takizawa',
-    maintainer_email='usomatu_daamyi826@uso.com',
+    maintainer_email='shogo.taki.2402@icloud.com',
     description='ロボットシステム学',
     license='BSD-3-Clause',
     extras_require={
