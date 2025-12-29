@@ -38,7 +38,7 @@ $ . install/setup.bash
 $ ros2 launch mypkg drawing_robot.launch.py
 ```
 - ターミナルで上記のように実行すると下のようなシミュレーションが動き出します。初期状態のパッケージでは雪だるまが書けます。
-![image](https://private-user-images.githubusercontent.com/238378492/530192869-4f002362-b620-4f25-a66d-f74665ea24fc.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjY2NTk5OTYsIm5iZiI6MTc2NjY1OTY5NiwicGF0aCI6Ii8yMzgzNzg0OTIvNTMwMTkyODY5LTRmMDAyMzYyLWI2MjAtNGYyNS1hNjZkLWY3NDY2NWVhMjRmYy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMjI1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTIyNVQxMDQ4MTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02OGVjYmRhMTU1NDA2ODFmNzVkMDc5MzMxOGJiOTllZGIxNzkyNjgwNjgzNzU2NjcyZmMyMGIwN2Y3NGQ4YjhkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.nUfEZaU4uK1NLfDxmNrDAt6t1_69Ijj2gqThrR26ErU)
+![image](https://github.com/user-attachments/assets/afc872a0-626a-4acd-9d38-86ea92cd9127)
 
 ## 各ノード・トピック概要
 ### complementノード
@@ -90,7 +90,7 @@ $ ros2 launch mypkg drawing_robot.launch.py
 ```
 ## 必要なソフトウェア
 - Python
-- ROS2
+- ROS2 Jazzy Jalisco
 ## 依存ライブラリ
 - NumPy
 - SciPy
