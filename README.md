@@ -7,7 +7,7 @@
 - パッケージの構成は以下のようになっています。
 ```bash
 mypkg
-├── LICENCE
+├── LICENSE
 ├── README.md
 ├── data
 │   └── coordinatesdata.csv
@@ -42,7 +42,7 @@ $ ros2 launch mypkg drawing_robot.launch.py
 
 ## 各ノード・トピック概要
 ### complementノード
-- complementノードはcoordinatesdata.csvに保存されたx-y座標データをスプライン補完により滑らかな軌道に変換し、complementトピックにx-y座標データのメッセージを流します。
+- complementノードはcoordinatesdata.csvに保存されたx-y座標データをスプライン補間により滑らかな軌道に変換し、complementトピックにx-y座標データのメッセージを流します。
 ### calculateノード
 - calculateノードはcomplementトピックに流れるメッセージを受け取ります。受け取ったメッセージをもとに逆運動学を解き、ロボットの左右車輪速度を求めて、outputトピックに時刻と左右車輪速度のデータを流します。
 ### odometryノード
@@ -66,6 +66,7 @@ $ ros2 launch mypkg drawing_robot.launch.py
 - array[2] = vl [mm/s]　左車輪速度
 
 ## coordinatesdata.csvの形式
+- data/coordinatesdata.csv に座標データを記述してください。
 - coordinatesdata.csvには1列目にx座標、２列目にy座標を入れてください。
 ```csv
 0.000000,0.000000
@@ -88,6 +89,7 @@ $ ros2 launch mypkg drawing_robot.launch.py
  9    "total_time": 120,  #デモ時間   [s]
 10 }
 ```
+- 使用する際はdrawing_robot.launch.pyを直接書き換えてください。
 ## 必要なソフトウェア
 - Python
 - ROS2 Jazzy Jalisco
