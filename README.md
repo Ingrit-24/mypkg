@@ -3,7 +3,7 @@
 
 ## パッケージ概要
 - このROS2パッケージは二輪駆動の台車を任意の軌道で動かすための軌道計画及びシミュレーションを手助けするためのものです。
-- data/coordinatesdata.csvに制御周期ごとのX-Y座標を書き込み,launch/drawing_robot.launch.pyを実行すると、シミュレーションが動きます。
+- data/coordinatesdata.csvにX-Y座標を書き込み、launch/drawing_robot.launch.pyを実行すると、シミュレーションが動きます。
 - パッケージの構成は以下のようになっています。
 ```bash
 mypkg
