@@ -4,7 +4,7 @@
   <name>mypkg</name>
   <version>0.0.0</version>
   <description>ロボットシステム学</description>
-  <maintainer email="usomatu_daamyi826@uso.com">shogo</maintainer>
+  <maintainer email="shogo.taki.2402@icloud.com">Shogo Takizawa</maintainer>
   <license>BSD-3-Clause</license>
   <exec_depend>rclpy</exec_depend>            
   <exec_depend>std_msgs</exec_depend> 
