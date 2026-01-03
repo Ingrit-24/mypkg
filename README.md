@@ -1,7 +1,5 @@
 # ネタ切れ
 ![test](https://github.com/Ingrit-24/mypkg/actions/workflows/test.yml/badge.svg)
-- ターミナルで上記のように実行すると下のようなシミュレーションが動き出します。初期状態のパッケージでは雪だるまが書けます。
-
 ## 各ノード・トピック概要
 
 ## 必要なソフトウェア
