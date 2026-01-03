@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: mypkg
+Version: 0.0.0
+Summary: ロボットシステム学
+Maintainer: Shogo Takizawa
+Maintainer-email: shogo.taki.2402@icloud.com
+License: BSD-3-Clause
+Provides-Extra: test
+License-File: LICENSE

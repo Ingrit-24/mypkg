@@ -8,10 +8,11 @@ import numpy as np
 class Inkinematics(Node):
     def __init__ (self):
         super().__init__("inkinematics")
-        self.sub_dt = self.create_subscription(Float32,"delta_t",self.get_dt,1)
-        self.sub_l = self.create_subscription(Float32,"wheel_dist",self.get_l,1)
-        self.sub_coords = self.create_subscription(Point,"coordinates",self.cb,10)
-        self.pub = self.create_publisher(Float32MultiArray,"velocities",10)
+        self.node = Node("inkinematics")
+        self.sub_dt = self.node.create_subscription(Float32,"delta_t",self.get_dt,1)
+        self.sub_dt = self.node.create_subscription(Float32,"wheel_dist",self.get_l,1)
+        self.sub_coords = self.node.create_subscription(Point,"coordinates",self.cb,10)
+        self.pub = self.node.create_publisher(Float32MultiArray,"velocities",10)
         self.n=0
         
         self.data_n=[0,0]
@@ -46,10 +47,10 @@ class Inkinematics(Node):
         
         self.v = np.sqrt((self.data_n[0]-self.data_p[0])**2+(self.data_n[1]-self.data_p[1])**2)/self.dt
         
-        self.derection_n = np.arctan2(self.data_n[1]-self.data_p[1],self.data_n[0]-self.data_p[0])
+        self.derection_n = np.atan2(self.data_n[1]-self.data_p[1],self.data_n[0]-self.data_p[0])
         
         if self.derection_n < (-np.pi/2) and (np.pi/2)<self.derection_p:
-            self.derection_p=-2*np.pi+self.derection_p
+            self.derection_p=-2*np.pi+self.delection_p
         if self.derection_p < (-np.pi/2) and (np.pi/2)<self.derection_n:
             self.derection_p=2*np.pi+self.derection_p
             
@@ -62,13 +63,10 @@ class Inkinematics(Node):
         outputs = Float32MultiArray()
         outputs.data = [float(ans[0]), float(ans[1])]
         self.pub.publish(outputs)
-        self.get_logger().info(f"{ans[0]}+{str(ans[1])}")
         
-        self.derection_p=self.derection_n
-        self.data_p=self.data_n
         
         
 def main():
     rclpy.init()
-    node=Inkinematics()
-    rclpy.spin(node)
+    loop=Inkinematics()
+    rclpy.spin(loop)
