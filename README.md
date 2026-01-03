@@ -6,9 +6,6 @@
 - Python
 - ROS2 Jazzy Jalisco
 ## 依存ライブラリ
-- NumPy
-- SciPy
-- Matplotlib
 
 ## テスト環境
 - Ubuntu 24.04 LTS
