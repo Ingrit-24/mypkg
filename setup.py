@@ -18,7 +18,7 @@ setup(
         (os.path.join('share', package_name), glob('launch/*.launch.py')),
         (os.path.join('share', package_name,'data'), glob('data/*.csv')),
     ],
-    install_requires=['setuptools','numpy','scipy','matplotlib'],
+    install_requires=['setuptools'],
     zip_safe=True,
     maintainer='Shogo Takizawa',
     maintainer_email='shogo.taki.2402@icloud.com',
@@ -31,9 +31,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-             'complement = mypkg.complement:main',
-             'calculate = mypkg.calculate:main',
-             'odometry = mypkg.odometry:main',
+
         ],
     },
 )
