@@ -16,8 +16,8 @@ class Inkinematics(Node):
         
         self.data_n=[0,0]
         self.data_p=[0,0]
-        self.delection_n=0
-        self.delection_p=0
+        self.derection_n=0
+        self.derection_p=0
         self.c=0
         
         self.dt
@@ -32,7 +32,7 @@ class Inkinematics(Node):
         self.dt=msg.data
         self.get_sta1=1
         
-    def get_dt (self,msg):
+    def get_l (self,msg):
         self.l=msg.data
         self.get_sta2=1
             
@@ -40,19 +40,19 @@ class Inkinematics(Node):
         if self.get_sta1 == 0 or self.get_sta2 == 0:
             return 0
         
-        self.data_n.append(msg.x)
-        self.data_n.append(msg.y)
+        self.data_n[0]=msg.x
+        self.data_n[1]=msg.y
         
-        self.v = np.sprt((self.data_n[0]-self.data_p[0])**2/self.dt+(self.data_n[1]-self.data_p[1])**2/self.dt)
+        self.v = np.sqrt((self.data_n[0]-self.data_p[0])**2+(self.data_n[1]-self.data_p[1])**2)/self.dt
         
-        self.delection_n = np.atan2(self.data_n[0]-self.data_p[0],self.data_n[1]-self.data_p[1])
+        self.derection_n = np.atan2(self.data_n[1]-self.data_p[1],self.data_n[0]-self.data_p[0])
         
-        if self.delection_n < (-np.pi/2) and (np.pi/2)<self.delection_p:
-            self.delection_p=-2*np.pi+self.delection_p
-        if self.delection_p < (-np.pi/2) and (np.pi/2)<self.delection_n:
+        if self.derection_n < (-np.pi/2) and (np.pi/2)<self.derection_p:
+            self.derection_p=-2*np.pi+self.delection_p
+        if self.derection_p < (-np.pi/2) and (np.pi/2)<self.derection_n:
             self.derection_p=2*np.pi+self.derection_p
             
-        self.omega = (self.delection_n-self.delection_p)/self.dt
+        self.omega = (self.derection_n-self.derection_p)/self.dt
         
         bect = np.array([self.omega,self.v])
         ans = np.linalg.solve(self.matrix, bect)
