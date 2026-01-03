@@ -40,7 +40,7 @@ class OdometryPlotter(Node):
 
     def cb(self, msg):
         t, vr, vl = msg.data
-        self.get_logger().info(f"|time:{msg.data[0]:>8.2f}|VR:{msg.data[1]:>8.2f}|VL:{msg.data[2]:>8.2f}|")
+        self.get_logger().info(f"|Time:{msg.data[0]:>8.2f}|VR:{msg.data[1]:>8.2f}|VL:{msg.data[2]:>8.2f}|")
         
         v = (vr + vl) / 2.0
         omega = (vr - vl) / self.robo_l

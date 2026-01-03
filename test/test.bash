@@ -11,6 +11,13 @@ colcon build
 source $dir/.bashrc
 timeout 5 ros2 launch mypkg drawing_robot.launch.py > /tmp/mypkg.log
 
-cat /tmp/mypkg.log | grep '|time:'
+
+cat /tmp/mypkg.log | grep '|Time:'
+status=$?  
+[ "$status" = "0" ] || exit 1
 cat /tmp/mypkg.log | grep '|VR:'
+status=$?  
+[ "$status" = "0" ] || exit 1
 cat /tmp/mypkg.log | grep '|VL:'
+status=$?  
+[ "$status" = "0" ] || exit 1
