@@ -7,7 +7,7 @@ import numpy as np
 
 class Inkinematics(Node):
     def __init__ (self):
-        self.node = Node("node_1kari")
+        self.node = Node("inkinematics")
         self.sub_dt = self.node.create_subscription(Float32,"delta_t",self.get_dt,1)
         self.sub_dt = self.node.create_subscription(Float32,"wheel_dist",self.get_l,1)
         self.sub_coords = self.node.create_subscription(Point,"coordinates",self.cb,10)
