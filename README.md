@@ -3,8 +3,8 @@
 ## 各ノード概要
 
 | ノード名 | 処理内容 |入力トピック|出力トピック| 
-|:---|:---|:---|:---|
-|inkinematics|座標データから二輪ロボットの左右車輪速度を求め返す|・delta_t<br>・wheel_dist<br>・coordinates|・velocities|
+|:---:|:---:|:---:|:---:|
+|inkinematics|座標データから二輪ロボットの左右車輪速度を求め,返す.|・delta_t<br>・wheel_dist<br>・coordinates|・velocities|
 ## トピック概要
 | トピック名 | データ型 | データの中身 | 注意点 |
 |:---|:---|:---|:---| 
