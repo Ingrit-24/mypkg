@@ -9,13 +9,15 @@
 ## 各トピック概要
 | トピック名 | データ型 | データの中身 | 注意点 |
 |:---|:---|:---|:---| 
-|delta_t|std_msgs.msg/Float32|制御周期|| 
-|wheel_dist|std_msgs.msg/Float32|車輪間距離|| 
-|coordinates|geometry_msgs.msg/Point|座標データ|このパッケージのノードではzを不使用| 
-|velocities|std_msgs.msg/Float32MultiArray|車輪速度|配列番号0が右<br>配列番号1が左| 
+|delta_t|std_msgs.msg/Float32|制御周期[s]|| 
+|wheel_dist|std_msgs.msg/Float32|車輪間距離[mm]|| 
+|coordinates|geometry_msgs.msg/Point|座標データ[mm]|このパッケージのノードではzを不使用| 
+|velocities|std_msgs.msg/Float32MultiArray|車輪速度[mm/s]|data[0]が右<br>data[1]が左| 
 
 ## 使用の際の注意点
-- このパッケージ内のノードは制御周期ごとにcoordinates内のメッセージが外部ノードによってパブリッシュされることを前提として作成されています。
+- inkinematicsは制御周期ごとにcoordinates内のメッセージが外部ノードによってパブリッシュされることを前提として作成されています。
+- odometryは制御周期ごとにvelocities内のメッセージが外部ノードによってパブリッシュされることを前提として作成されています。
+- このパッケージのノードはロボットの初期位置(0,0)・初期姿勢ｘ軸正の方向であるものとして計算されています。
 ## 必要なソフトウェア
 - Python
 - ROS2 Jazzy Jalisco

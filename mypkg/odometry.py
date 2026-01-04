@@ -35,6 +35,8 @@ class Odometry(Node):
     def cb(self,msg):
         if self.get_sta1 == 0 or self.get_sta2 == 0:
             return 0
+        
+        #data[0]が右　  data[1]が左
         self.derection+=(msg.data[0]-msg.data[1])/self.l
         v=(msg.data[0]+msg.data[1])/2
         

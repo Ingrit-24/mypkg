@@ -62,6 +62,7 @@ class Inkinematics(Node):
         bect = np.array([self.omega,self.v])
         ans = np.linalg.solve(matrix, bect)
         
+        #data[0]が右　  data[1]が左
         outputs = Float32MultiArray()
         outputs.data = [float(ans[0]), float(ans[1])]
         self.pub.publish(outputs)
