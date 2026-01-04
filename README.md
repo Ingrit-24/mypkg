@@ -2,8 +2,8 @@
 ![test](https://github.com/Ingrit-24/mypkg/actions/workflows/test.yml/badge.svg)
 ## 各ノード概要
 
-| ノード名 | 処理内容 | 入力トピック名 | 出力トピック名 | 注意点 |
-|:---|:---|:---|:---|:---|
+| ノード名 | 処理内容 | 入力トピック名 | 出力トピック名 | 
+|:---|:---|:---|:---|
 |inkinematics|制御周期ごとの座標データから二輪ロボットの左右車輪速度を求めデータを返す|・delta_t<br>・wheel_dist<br>・coordinates|・velocities|
 ## トピック概要
 | トピック名 | データ型 | データの中身 | 注意点 |
