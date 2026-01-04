@@ -4,8 +4,7 @@
 
 | ノード名 | 処理内容 | 入力トピック名 | 出力トピック名 | 注意点 |
 |:---|:---|:---|:---|:---|
-|inkinematics|制御周期ごとの座標データから二輪ロボットの左右車輪速度を求めデータを返す|・delta_t<br>・wheel_dist<br>・coordinates|・velocities|このノードは制御周期ごとにcoordinatesが更新されることを前提としています| 
-
+|inkinematics|制御周期ごとの座標データから二輪ロボットの左右車輪速度を求めデータを返す|・delta_t<br>・wheel_dist<br>・coordinates|・velocities|
 ## トピック概要
 | トピック名 | データ型 | データの中身 | 注意点 |
 |:---|:---|:---|:---| 
