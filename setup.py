@@ -31,7 +31,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-             'inkinematics = mypkg.inkinematics:main',
+            'inkinematics = mypkg.inkinematics:main',
         ],
     },
 )
