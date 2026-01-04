@@ -9,7 +9,7 @@ dir=~
 cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
-timeout 5 ros2 launch mypkg drawing_robot.launch.py > /tmp/mypkg.log
+timeout 5 ros2 launch mypkg test_launch.py > /tmp/mypkg.log
 
 
 cat /tmp/mypkg.log | grep 'get wheel_dist success'
