@@ -68,7 +68,8 @@ class Inkinematics(Node):
         self.get_logger().info(f"{ans[0]}+{str(ans[1])}")
         
         self.derection_p=self.derection_n
-        self.data_p=self.data_n
+        self.data_p[0]=self.data_n[0]
+        self.data_p[1]=self.data_n[1]
         
         
 def main():
