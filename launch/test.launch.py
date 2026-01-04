@@ -12,4 +12,4 @@ def generate_launch_description():
         package='mypkg',      
         executable='inkinematics',  
         )
-    return 0
+    return launch.LaunchDescription([talker])   
