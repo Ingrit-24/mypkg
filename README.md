@@ -4,8 +4,9 @@
 
 | ノード名 | 処理内容 |入力トピック|出力トピック| 
 |:---:|:---:|:---|:---|
-|inkinematics|座標データから二輪ロボットの左右車輪速度を求め,返す.|・delta_t<br>・wheel_dist<br>・coordinates|・velocities|
-## トピック概要
+|inkinematics|座標データから二輪ロボットの左右車輪速度を求め、メッセージを流す|・delta_t<br>・wheel_dist<br>・coordinates|・velocities|
+|odometry|左右車輪速度から現在位置を推定し、メッセージを流す|・delta_t<br>・wheel_dist<br>・velocities|・|
+## 各トピック概要
 | トピック名 | データ型 | データの中身 | 注意点 |
 |:---|:---|:---|:---| 
 |delta_t|std_msgs.msg/Float32|制御周期|| 
