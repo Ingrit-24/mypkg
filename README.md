@@ -10,10 +10,11 @@
 |:---|:---|:---|:---| 
 |delta_t|std_msgs.msg/Float32|制御周期|| 
 |wheel_dist|std_msgs.msg/Float32|車輪間距離|| 
-|coordinates|geometry_msgs.msg/Point|座標データ|このパッケージのノードではZを不使用| 
+|coordinates|geometry_msgs.msg/Point|座標データ|このパッケージのノードではzを不使用| 
 |velocities|std_msgs.msg/Float32MultiArray|車輪速度|配列番号0が右<br>配列番号1が左| 
 
-
+## 使用の際の注意点
+- inkinematicsは制御周期ごとにcoordinates内のメッセージが外部プログラムによってパブリッシュされることを前提として作成されています。
 ## 必要なソフトウェア
 - Python
 - ROS2 Jazzy Jalisco
