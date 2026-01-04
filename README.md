@@ -1,8 +1,10 @@
 # ネタ切れ
 ![test](https://github.com/Ingrit-24/mypkg/actions/workflows/test.yml/badge.svg)
 ## 各ノード概要
+```hyou
 | ノード名 | 処理内容 | 入力トピック名 | 出力トピック名 |
 |:--- | :---: | ---: |
+```
 ## 必要なソフトウェア
 - Python
 - ROS2 Jazzy Jalisco
