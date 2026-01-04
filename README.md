@@ -4,7 +4,7 @@
 
 | ノード名 | 処理内容 | 入力トピック名 | 出力トピック名 |
 |:---|:---|:---|:---| 
-|inkinematics|二輪ロボ離散的な座標データから左右車輪速度を求める|delta_t<br>wheel_dist<br>coordinates|velocities| 
+|inkinematics|二輪ロボ離散的な座標データから左右車輪速度を求める|・delta_t<br>・wheel_dist<br>・coordinates|・velocities| 
 
 ## 必要なソフトウェア
 - Python
