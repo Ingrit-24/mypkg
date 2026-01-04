@@ -8,8 +8,15 @@ import launch_ros.actions
 
 
 def generate_launch_description():
+    
     talker = launch_ros.actions.Node(
+        package='mypkg',      
+        executable='test1node',  
+        )
+    
+    listener = launch_ros.actions.Node(
         package='mypkg',      
         executable='inkinematics',  
         )
-    return launch.LaunchDescription([talker])   
+    
+    return launch.LaunchDescription([talker,listener])   
