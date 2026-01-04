@@ -4,7 +4,7 @@
 
 | ノード名 | 処理内容 |入力トピック|出力トピック| 
 |:---:|:---:|:---|:---|
-|inkinematics|座標データから二輪ロボットの左右車輪速度を求め、メッセージを流す|・delta_t<br>・wheel_dist<br>・coordinates|・velocities|
+|inkinematics|座標データから二輪ロボットの左右車輪速度を求め、<dr>メッセージを流す|・delta_t<br>・wheel_dist<br>・coordinates|・velocities|
 |odometry|左右車輪速度から現在位置を推定し、メッセージを流す|・delta_t<br>・wheel_dist<br>・velocities|・|
 ## 各トピック概要
 | トピック名 | データ型 | データの中身 | 注意点 |
@@ -15,7 +15,7 @@
 |velocities|std_msgs.msg/Float32MultiArray|車輪速度|配列番号0が右<br>配列番号1が左| 
 
 ## 使用の際の注意点
-- inkinematicsは制御周期ごとにcoordinates内のメッセージが外部ノードによってパブリッシュされることを前提として作成されています。
+- このパッケージ内のノードは制御周期ごとにcoordinates内のメッセージが外部ノードによってパブリッシュされることを前提として作成されています。
 ## 必要なソフトウェア
 - Python
 - ROS2 Jazzy Jalisco
