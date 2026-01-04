@@ -1,4 +1,4 @@
-# ネタ切れ
+# 二輪ロボットのためのパッケージ
 ![test](https://github.com/Ingrit-24/mypkg/actions/workflows/test.yml/badge.svg)
 ## 各ノード概要
 
@@ -18,7 +18,7 @@
 - Python
 - ROS2 Jazzy Jalisco
 ## 依存ライブラリ
-
+- NumPy
 ## テスト環境
 - Ubuntu 24.04 LTS
 
