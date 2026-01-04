@@ -33,12 +33,12 @@ class Inkinematics(Node):
     def get_dt (self,msg):
         self.dt=msg.data
         self.get_sta1=1
-        self.get_logger().info('get delta_t success')
+        self.get_logger().info('inkinematics get delta_t success')
         
     def get_l (self,msg):
         self.l=msg.data
         self.get_sta2=1
-        self.get_logger().info('get wheel_dist success')
+        self.get_logger().info('inkinematics get wheel_dist success')
             
     def cb(self,msg):
         if self.get_sta1 == 0 or self.get_sta2 == 0:
