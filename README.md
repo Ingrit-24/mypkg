@@ -4,7 +4,16 @@
 
 | ノード名 | 処理内容 | 入力トピック名 | 出力トピック名 |
 |:---|:---|:---|:---| 
-|inkinematics|二輪ロボ離散的な座標データから左右車輪速度を求める|・delta_t<br>・wheel_dist<br>・coordinates|・velocities| 
+|inkinematics|制御周期ごとの座標データから二輪ロボットの左右車輪速度を求めデータを返す|・delta_t<br>・wheel_dist<br>・coordinates|・velocities| 
+
+## トピック概要
+| トピック名 | データ型 | データの中身 | 注意点 |
+|:---|:---|:---|:---| 
+|delta_t|std_msgs.msg/Float32|制御周期|| 
+|wheel_dist|std_msgs.msg/Float32|車輪間距離|| 
+|coordinates|geometry_msgs.msg/Point|座標データ|このパッケージのノードではZを不使用| 
+|velocities|std_msgs.msg/Float32MultiArray|車輪速度|配列番号０が右<br>配列番号1が左| 
+
 
 ## 必要なソフトウェア
 - Python
