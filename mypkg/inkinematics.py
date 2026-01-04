@@ -65,6 +65,7 @@ class Inkinematics(Node):
         outputs = Float32MultiArray()
         outputs.data = [float(ans[0]), float(ans[1])]
         self.pub.publish(outputs)
+        
         self.get_logger().info(f"{ans[0]}+{str(ans[1])}")
         
         self.derection_p=self.derection_n
