@@ -12,9 +12,16 @@ source $dir/.bashrc
 timeout 5 ros2 launch mypkg test.launch.py > /tmp/mypkg.log
 
 
-cat /tmp/mypkg.log | grep 'get wheel_dist success'
+cat /tmp/mypkg.log | grep 'inkinematics get delta_t success'
 status=$?  
 [ "$status" = "0" ] || exit 1
-cat /tmp/mypkg.log | grep 'get delta_t success'
+cat /tmp/mypkg.log | grep 'inkinematics get delta_t success'
 status=$?  
 [ "$status" = "0" ] || exit 1
+cat /tmp/mypkg.log | grep 'odometry get wheel_dist success'
+status=$?  
+[ "$status" = "0" ] || exit 1
+cat /tmp/mypkg.log | grep 'odometry get delta_t success'
+status=$?  
+[ "$status" = "0" ] || exit 1
+
