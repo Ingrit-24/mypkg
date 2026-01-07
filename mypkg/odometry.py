@@ -31,11 +31,11 @@ class Odometry(Node):
     def cb(self,msg):
 
         #data[0]が右　  data[1]が左
-        self.derection+=(msg.data[0]-msg.data[1])/self.l
+        d_theta=(msg.data[0]-msg.data[1])/self.l*self.dt       
         v=(msg.data[0]+msg.data[1])/2
         
-        self.x+=np.cos(self.derection)*v*self.dt
-        self.y+=np.sin(self.derection)*v*self.dt
+        self.x+=np.cos(self.derection+d_theta/2.0)*v*self.dt
+        self.y+=np.sin(self.derection+d_theta/2.0)*v*self.dt
         self.get_logger().info(f'{self.x}  {self.y}')
         
         
@@ -43,6 +43,7 @@ class Odometry(Node):
         out.x=self.x
         out.y=self.y
         self.pub.publish(out)
+        self.derection+=d_theta
 
 def main():
     rclpy.init()
