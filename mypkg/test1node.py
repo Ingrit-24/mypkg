@@ -3,10 +3,8 @@
 
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Float32
 from geometry_msgs.msg import Point
 import numpy as np
-import time
 
 class Test(Node):
     def __init__(self):
