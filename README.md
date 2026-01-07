@@ -30,6 +30,7 @@
 - ROS2 Jazzy Jalisco
 ## 依存ライブラリ
 - NumPy
+- matplotlib
 ## テスト環境
 - Ubuntu 24.04 LTS
 
