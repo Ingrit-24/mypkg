@@ -21,8 +21,8 @@ class Odometry(Node):
         self.get_logger().info(f'odometry get wheel_dist success: {self.l}')
         
         
-        self.sub = self.create_subscription(Float32MultiArray,"velocities",self.cb,10)
-        self.pub = self.create_publisher(Point,"coordinates",10)
+        self.sub = self.create_subscription(Float32MultiArray,"velocities_odo",self.cb,10)
+        self.pub = self.create_publisher(Point,"coordinates_odo",10)
         self.n=0
         self.x=0
         self.y=0

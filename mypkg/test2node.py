@@ -9,7 +9,7 @@ import numpy as np
 class Test(Node):
     def __init__(self):
         super().__init__("test2node")
-        self.pub=self.create_publisher(Float32MultiArray,"velocities",10)
+        self.pub=self.create_publisher(Float32MultiArray,"velocities_odo",10)
         self.dt=0.5
         self.n=0
         

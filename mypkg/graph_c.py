@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 class Graph(Node):
     def __init__(self):
         super().__init__("graph_c")
-        self.pub = self.create_subscription(Point,"coordinates",self.cb,10)
+        self.pub = self.create_subscription(Point,"coordinates_odo",self.cb,10)
         
         self.declare_parameter('delta_t', 0.5)
         self.dt= self.get_parameter('delta_t').get_parameter_value().double_value

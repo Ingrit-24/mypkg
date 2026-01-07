@@ -11,8 +11,10 @@
 ## 各トピック概要
 | トピック名 | データ型 | データの中身 | 注意点 |
 |:---|:---|:---|:---| 
-|coordinates_inkine|geometry_msgs.msg/Point|逆運動学用座標データ[mm]|このパッケージのノードではzを不使用| 
+|coordinates_inkine|geometry_msgs.msg/Point|逆運動学用座標データ[mm]|msg.zを不使用| 
 |velocities_inkine|std_msgs.msg/Float32MultiArray|逆運動学解　車輪速度[mm/s]|data[0]が右車輪<br>data[1]が左車輪| 
+|coordinates_odo|geometry_msgs.msg/Point|オドメトリ結果[mm]|msg.zを不使用| 
+|velocities_odo|std_msgs.msg/Float32MultiArray|オドメトリ用車輪速度[mm/s]|data[0]が右車輪<br>data[1]が左車輪| 
 
 ## 各パラメータ概要
 | パラメータ名 | データ型　|データの中身 | 
