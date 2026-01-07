@@ -6,7 +6,7 @@
 |:---:|:---:|:---|:---|:---|
 |inkinematics|座標データから<br>二輪ロボットの左右車輪速度を求め、<br>メッセージを流す|coordinates|velocities| delta_t <br> wheel_dist|
 | graph_v | 速度データの変化をグラフで表示 |velocities|無し|delta_t|
-|odometry|左右車輪速度から現在位置を推定し、メッセージを流す|velocities|coordinates|delta_t <br> wheel_dist|
+|odometry|左右車輪速度から現在位置を推定し、<br>メッセージを流す|velocities|coordinates|delta_t <br> wheel_dist|
 | graph_c |  座標データからロボットの軌跡を表示　|coordinates|無し|delta_t|
 ## 各トピック概要
 | トピック名 | データ型 | データの中身 | 注意点 |
