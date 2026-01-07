@@ -18,13 +18,17 @@ def generate_launch_description():
         package='mypkg',      
         executable='inkinematics',  
         parameters=[{
-                'delta_t':0.5,
-                'wheel_dist':150.0,
+                'delta_t':0.25,
+                'wheel_dist':100.0,
             }]
         )
     odometry = launch_ros.actions.Node(
         package='mypkg',      
-        executable='odometry',  
+        executable='odometry', 
+        parameters=[{
+                'delta_t':0.25,
+                'wheel_dist':100.0,
+            }] 
         )
     
     return launch.LaunchDescription([inkinematics,odometry,test1])   

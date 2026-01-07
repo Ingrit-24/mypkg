@@ -10,9 +10,18 @@ import numpy as np
 class Odometry(Node):
     def __init__(self):
         super().__init__("odometry")
+        
+        self.declare_parameter('delta_t', 0.5)
+        self.declare_parameter('wheel_dist', 150.0)
+        
+        self.dt= self.get_parameter('delta_t').get_parameter_value().double_value
+        self.get_logger().info(f'odometry get delta_t success: {self.dt}')
+        
+        self.l= self.get_parameter('wheel_dist').get_parameter_value().double_value
+        self.get_logger().info(f'odometry get wheel_dist success: {self.l}')
+        
+        
         self.sub = self.create_subscription(Float32MultiArray,"velocities",self.cb,10)
-        self.sub_dt = self.create_subscription(Float32,"delta_t",self.get_dt,1)
-        self.sub_l = self.create_subscription(Float32,"wheel_dist",self.get_l,1)
         self.n=0
         self.x=0
         self.y=0
@@ -22,20 +31,8 @@ class Odometry(Node):
         self.get_sta2=1
         self.derection=0
     
-    def get_dt (self,msg):
-        self.dt=msg.data
-        self.get_sta1=1
-        self.get_logger().info('odometry get delta_t success')
-        
-    def get_l (self,msg):
-        self.l=msg.data
-        self.get_sta2=1
-        self.get_logger().info('odometry get wheel_dist success')
-    
     def cb(self,msg):
-        if self.get_sta1 == 0 or self.get_sta2 == 0:
-            return 0
-        
+
         #data[0]が右　  data[1]が左
         self.derection+=(msg.data[0]-msg.data[1])/self.l
         v=(msg.data[0]+msg.data[1])/2
