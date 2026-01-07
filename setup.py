@@ -33,6 +33,7 @@ setup(
         'console_scripts': [
             'inkinematics = mypkg.inkinematics:main',
             'test1node = mypkg.test1node:main',
+            'test2node = mypkg.test2node:main',
             'odometry = mypkg.odometry:main',
             'graph_v = mypkg.graph_v:main',
         ],

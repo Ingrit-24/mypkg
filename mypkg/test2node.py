@@ -3,25 +3,24 @@
 
 import rclpy
 from rclpy.node import Node
-from geometry_msgs.msg import Point
+from std_msgs.msg import Float32MultiArray
 import numpy as np
 
 class Test(Node):
     def __init__(self):
-        super().__init__("test1node")
-        self.pub=self.create_publisher(Point,"coordinates",10)
-        self.l=150
+        super().__init__("test2node")
+        self.pub=self.create_publisher(Float32MultiArray,"velocities",10)
         self.dt=0.5
         self.n=0
         
         self.create_timer(self.dt,self.cb)
         
     def cb(self):
-        x=np.cos(np.pi*0.05*self.n-np.pi/2)*1000
-        y=1000+np.sin(np.pi*0.05*self.n-np.pi/2)*1000
-        out=Point()
-        out.x=x
-        out.y=y
+        right=150
+        left=200
+        out=Float32MultiArray()
+        out.data[0]=right
+        out.data[1]=left
         self.pub.publish(out)
         self.n+=1
         
