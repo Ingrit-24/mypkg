@@ -5,12 +5,12 @@
 | ノード名 | 処理内容 |入力トピック|出力トピック| 
 |:---:|:---:|:---|:---|
 |inkinematics|座標データから二輪ロボットの左右車輪速度を求め、<br>メッセージを流す|coordinates|velocities|
-|odometry|左右車輪速度から現在位置を推定し、メッセージを流す|velocities||
+|odometry|左右車輪速度から現在位置を推定し、メッセージを流す|velocities|coordinates|
 ## 各トピック概要
 | トピック名 | データ型 | データの中身 | 注意点 |
 |:---|:---|:---|:---| 
 |coordinates|geometry_msgs.msg/Point|座標データ[mm]|このパッケージのノードではzを不使用| 
-|velocities|std_msgs.msg/Float32MultiArray|車輪速度[mm/s]|data[0]が右<br>data[1]が左| 
+|velocities|std_msgs.msg/Float32MultiArray|車輪速度[mm/s]|data[0]が右車輪<br>data[1]が左車輪| 
 
 ## 各パラメータ概要
 | パラメータ名 | データ型　|データの中身 | 

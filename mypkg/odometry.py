@@ -4,7 +4,7 @@
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float32MultiArray
-from std_msgs.msg import Float32
+from geometry_msgs import Point
 import numpy as np
 
 class Odometry(Node):
@@ -22,6 +22,7 @@ class Odometry(Node):
         
         
         self.sub = self.create_subscription(Float32MultiArray,"velocities",self.cb,10)
+        self.pub = self.create_publisher(Point,"coordinates",10)
         self.n=0
         self.x=0
         self.y=0
@@ -40,6 +41,12 @@ class Odometry(Node):
         self.x+=np.cos(self.derection)*v*self.dt
         self.y+=np.sin(self.derection)*v*self.dt
         self.get_logger().info(f'{self.x}  {self.y}')
+        
+        
+        out = Point()
+        out.x=self.x
+        out.y=self.y
+        self.pub.publish(out)
 
 def main():
     rclpy.init()
