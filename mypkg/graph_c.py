@@ -20,7 +20,7 @@ class Graph(Node):
         
         plt.ion() 
         self.fig, self.ax = plt.subplots()
-        self.line, = self.ax.plot([], [],'b-',label="right_verocity",antialiased=True)
+        self.line, = self.ax.plot([], [],'b-',label="robot_histry",antialiased=True)
         self.point, = self.ax.plot([], [],"ro")
         self.ax.set_aspect('equal')
         self.ax.grid(True)

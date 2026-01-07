@@ -17,8 +17,8 @@ class Test(Node):
         self.create_timer(self.dt,self.cb)
         
     def cb(self):
-        x=np.cos(np.pi*0.05*self.n-np.pi/2)*1000
-        y=1000+np.sin(np.pi*0.05*self.n-np.pi/2)*1000
+        x=self.n*50.0
+        y=1000+np.sin(np.pi*0.025*self.n-np.pi/2)*1000
         out=Point()
         out.x=x
         out.y=y

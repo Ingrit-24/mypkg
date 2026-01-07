@@ -22,8 +22,8 @@ class Graph(Node):
         
         plt.ion() 
         self.fig, self.ax = plt.subplots()
-        self.line_r, = self.ax.plot([], [],label="right_verocity")
-        self.line_l, = self.ax.plot([], [],label="left_verocity")
+        self.line_r, = self.ax.plot([], [],label="right_velocity")
+        self.line_l, = self.ax.plot([], [],label="left_velocity")
         self.ax.legend()
         self.ax.set_xlabel("Time [s]")
         self.ax.set_ylabel("Velocity [mm/s]")
