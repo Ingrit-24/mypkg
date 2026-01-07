@@ -14,14 +14,14 @@ def generate_launch_description():
                 'wheel_dist':100.0,
             }] 
     
-    test1 = launch_ros.actions.Node(
+    test2 = launch_ros.actions.Node(
         package='mypkg',      
-        executable='test1node',  
+        executable='test2node',  
         )
     
-    inkinematics = launch_ros.actions.Node(
+    odometry = launch_ros.actions.Node(
         package='mypkg',      
-        executable='inkinematics',  
+        executable='odometry',  
         parameters=para
         )
     
@@ -31,4 +31,4 @@ def generate_launch_description():
         parameters=para
         )
     
-    return launch.LaunchDescription([inkinematics,test1,graph_v])   
+    return launch.LaunchDescription([odometry,test2,graph_v])   
