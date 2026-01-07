@@ -4,7 +4,7 @@
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float32MultiArray
-from geometry_msgs import Point
+from geometry_msgs.msg import Point
 import numpy as np
 
 class Odometry(Node):
@@ -15,10 +15,10 @@ class Odometry(Node):
         self.declare_parameter('wheel_dist', 150.0)
         
         self.dt= self.get_parameter('delta_t').get_parameter_value().double_value
-        self.get_logger().info(f'odometry get delta_t success: {self.dt}')
+        self.get_logger().info(f'odometry get delta_t success:{self.dt}')
         
         self.l= self.get_parameter('wheel_dist').get_parameter_value().double_value
-        self.get_logger().info(f'odometry get wheel_dist success: {self.l}')
+        self.get_logger().info(f'odometry get wheel_dist success:{self.l}')
         
         
         self.sub = self.create_subscription(Float32MultiArray,"velocities",self.cb,10)
@@ -26,10 +26,6 @@ class Odometry(Node):
         self.n=0
         self.x=0
         self.y=0
-        self.dt=0
-        self.l=0
-        self.get_sta1=1
-        self.get_sta2=1
         self.derection=0
     
     def cb(self,msg):
