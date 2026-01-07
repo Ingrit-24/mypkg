@@ -9,7 +9,7 @@ import numpy as np
 class Test(Node):
     def __init__(self):
         super().__init__("test1node")
-        self.pub=self.create_publisher(Point,"coordinates",10)
+        self.pub=self.create_publisher(Point,"coordinates_inkine",10)
         self.l=150
         self.dt=0.5
         self.n=0

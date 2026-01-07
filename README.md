@@ -4,15 +4,15 @@
 
 | ノード名 | 処理内容 |入力トピック|出力トピック|パラメータ|
 |:---:|:---:|:---|:---|:---|
-|inkinematics|座標データから<br>二輪ロボットの左右車輪速度を求め、<br>メッセージを流す|coordinates|velocities| delta_t <br> wheel_dist|
-| graph_v | 速度データの変化をグラフで表示 |velocities|無し|delta_t|
+|inkinematics|座標データから<br>二輪ロボットの左右車輪速度を求め、<br>メッセージを流す|coordinates_inkine|velocities_inkine| delta_t <br> wheel_dist|
+| graph_v | 速度データの変化をグラフで表示 |velocities_inkine|無し|delta_t|
 |odometry|左右車輪速度から現在位置を推定し、<br>メッセージを流す|velocities|coordinates|delta_t <br> wheel_dist|
 | graph_c |  座標データからロボットの軌跡を表示　|coordinates|無し|delta_t|
 ## 各トピック概要
 | トピック名 | データ型 | データの中身 | 注意点 |
 |:---|:---|:---|:---| 
-|coordinates|geometry_msgs.msg/Point|座標データ[mm]|このパッケージのノードではzを不使用| 
-|velocities|std_msgs.msg/Float32MultiArray|車輪速度[mm/s]|data[0]が右車輪<br>data[1]が左車輪| 
+|coordinates_inkine|geometry_msgs.msg/Point|逆運動学用座標データ[mm]|このパッケージのノードではzを不使用| 
+|velocities_inkine|std_msgs.msg/Float32MultiArray|逆運動学解　車輪速度[mm/s]|data[0]が右車輪<br>data[1]が左車輪| 
 
 ## 各パラメータ概要
 | パラメータ名 | データ型　|データの中身 | 

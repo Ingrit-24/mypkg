@@ -20,8 +20,8 @@ class Inkinematics(Node):
         self.l= self.get_parameter('wheel_dist').get_parameter_value().double_value
         self.get_logger().info(f'inkinematics get wheel_dist success: {self.l}')
         
-        self.sub_coords = self.create_subscription(Point,"coordinates",self.cb,10)
-        self.pub = self.create_publisher(Float32MultiArray,"velocities",10)
+        self.sub_coords = self.create_subscription(Point,"coordinates_inkine",self.cb,10)
+        self.pub = self.create_publisher(Float32MultiArray,"velocities_inkine",10)
         self.n=0
         
         self.data_n=[0,0]
