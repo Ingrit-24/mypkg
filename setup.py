@@ -18,7 +18,7 @@ setup(
         (os.path.join('share', package_name), glob('launch/*.launch.py')),
         (os.path.join('share', package_name,'data'), glob('data/*.csv')),
     ],
-    install_requires=['setuptools','numpy'],
+    install_requires=['setuptools','numpy','matplotlib'],
     zip_safe=True,
     maintainer='Shogo Takizawa',
     maintainer_email='shogo.taki.2402@icloud.com',
