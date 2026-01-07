@@ -9,29 +9,30 @@ from matplotlib import pyplot as plt
 class Graph(Node):
     def __init__(self):
         super().__init__("graph_c")
-        self.pub = self.create_subscription(Point,"velocities",self.cb,10)
+        self.pub = self.create_subscription(Point,"coordinates",self.cb,10)
         
-        self.vr=[]
-        self.vl=[]
-        self.t=[]
-        self.n=0
+        self.declare_parameter('delta_t', 0.5)
+        self.dt= self.get_parameter('delta_t').get_parameter_value().double_value
+        self.get_logger().info(f'graph_c get delta_t success: {self.dt}')
+        
+        self.x=[0]
+        self.y=[0]
         
         plt.ion() 
         self.fig, self.ax = plt.subplots()
-        self.line_r, = self.ax.plot([], [],label="right_verocity")
-        self.line_l, = self.ax.plot([], [],label="left_verocity")
-        self.ax.legend()
-        self.ax.set_xlabel("Time [s]")
-        self.ax.set_ylabel("Velocity [mm/s]")
+        self.line, = self.ax.plot([], [],'b-',label="right_verocity",antialiased=True)
+        self.point, = self.ax.plot([], [],"ro")
+        self.ax.set_aspect('equal')
+        self.ax.grid(True)
+        self.ax.set_xlabel("[mm]")
+        self.ax.set_ylabel("[mm]")
         
     def cb(self,msg):
-        self.vr.append(msg.data[0])
-        self.vl.append(msg.data[1])
-        self.t.append(self.n*self.dt)
-        self.n+=1
+        self.x.append(msg.x)
+        self.y.append(msg.y)
         
-        self.line_r.set_data(self.t, self.vr)
-        self.line_l.set_data(self.t, self.vl)
+        self.line.set_data(self.x, self.y)
+        self.point.set_data(msg.x,msg.y)
         self.ax.relim()      
         self.ax.autoscale_view()
         plt.draw()      

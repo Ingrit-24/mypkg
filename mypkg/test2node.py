@@ -16,11 +16,10 @@ class Test(Node):
         self.create_timer(self.dt,self.cb)
         
     def cb(self):
-        right=150
-        left=200
+        right=200
+        left=175
         out=Float32MultiArray()
-        out.data[0]=right
-        out.data[1]=left
+        out.data=[float(right),float(left)]
         self.pub.publish(out)
         self.n+=1
         

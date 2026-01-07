@@ -15,10 +15,10 @@ class Odometry(Node):
         self.declare_parameter('wheel_dist', 150.0)
         
         self.dt= self.get_parameter('delta_t').get_parameter_value().double_value
-        self.get_logger().info(f'odometry get delta_t success:{self.dt}')
+        self.get_logger().info(f'odometry get delta_t success: {self.dt}')
         
         self.l= self.get_parameter('wheel_dist').get_parameter_value().double_value
-        self.get_logger().info(f'odometry get wheel_dist success:{self.l}')
+        self.get_logger().info(f'odometry get wheel_dist success: {self.l}')
         
         
         self.sub = self.create_subscription(Float32MultiArray,"velocities",self.cb,10)

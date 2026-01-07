@@ -36,6 +36,7 @@ setup(
             'test2node = mypkg.test2node:main',
             'odometry = mypkg.odometry:main',
             'graph_v = mypkg.graph_v:main',
+            'graph_c = mypkg.graph_c:main',
         ],
     },
 )

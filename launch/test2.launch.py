@@ -25,10 +25,10 @@ def generate_launch_description():
         parameters=para
         )
     
-    graph_v = launch_ros.actions.Node(
+    graph_c = launch_ros.actions.Node(
         package='mypkg',      
-        executable='graph_v', 
+        executable='graph_c', 
         parameters=para
         )
     
-    return launch.LaunchDescription([odometry,test2,graph_v])   
+    return launch.LaunchDescription([test2,odometry,graph_c])   
