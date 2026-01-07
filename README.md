@@ -4,9 +4,9 @@
 
 | ノード名 | 処理内容 |入力トピック|出力トピック|パラメータ|
 |:---:|:---:|:---|:---|:---|
-|inkinematics|座標データから<br>二輪ロボットの左右車輪速度を求め、<br>メッセージを流す|coordinates_inkine|velocities_inkine| delta_t <br> wheel_dist|
+|inkinematics|座標データから<br>左右車輪速度を求め<br>メッセージを流す|coordinates_inkine|velocities_inkine| delta_t <br> wheel_dist|
 | graph_v | 速度データの変化をグラフで表示 |velocities_inkine|無し|delta_t|
-|odometry|左右車輪速度から現在位置を推定し、<br>メッセージを流す|velocities_odo|coordinates_odo|delta_t <br> wheel_dist|
+|odometry|左右車輪速度から現在位置を推定し<br>メッセージを流す|velocities_odo|coordinates_odo|delta_t <br> wheel_dist|
 | graph_c |  座標データからロボットの軌跡を表示　|coordinates_odo|無し|delta_t|
 ## 各トピック概要
 | トピック名 | データ型 | データの中身 | 注意点 |
