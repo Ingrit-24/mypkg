@@ -31,4 +31,16 @@ def generate_launch_description():
         parameters=para
         )
     
-    return launch.LaunchDescription([inkinematics,test1,graph_v])   
+    odometry = launch_ros.actions.Node(
+        package='mypkg',      
+        executable='odometry',  
+        parameters=para
+        )
+    
+    graph_c = launch_ros.actions.Node(
+        package='mypkg',      
+        executable='graph_c', 
+        parameters=para
+        )
+    
+    return launch.LaunchDescription([inkinematics,test1,graph_v,odometry,graph_c])   
