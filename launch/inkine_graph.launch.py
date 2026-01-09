@@ -9,6 +9,7 @@ import launch_ros.actions
 
 def generate_launch_description():
     
+    #パラメータ変更はここから
     para=[{
                 'delta_t':0.50,
                 'wheel_dist':150.0,
