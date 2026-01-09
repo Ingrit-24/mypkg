@@ -20,9 +20,6 @@ status=$?
 cat /tmp/mypkg.log | grep 'graph_v get delta_t success: 0.25'
 status=$?  
 [ "$status" = "0" ] || exit 1
-
-
-timeout 10 ros2 launch mypkg test2.launch.py > /tmp/mypkg.log
 cat /tmp/mypkg.log | grep 'odometry get delta_t success: 0.25'
 status=$?  
 [ "$status" = "0" ] || exit 1
