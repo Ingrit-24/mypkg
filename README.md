@@ -29,8 +29,8 @@
 ## launchファイル概用
 | ファイル名 | 立ち上げるファイル | 作用 |
 |:---|:---|:---| 
-|inkinematics_graph.launch.py||inkinematics<br>graph_v|逆運動学結果をグラフで表示| 
-|odometry_graph.launch.py||odometry<br>graph_c|オドメトリ結果をグラフで表示| 
+|inkinematics_graph.launch.py|inkinematics<br>graph_v|逆運動学結果をグラフで表示| 
+|odometry_graph.launch.py|odometry<br>graph_c|オドメトリ結果をグラフで表示| 
 - これらのファイルからパラメータ変更を行うこともできます。<br>ファイル内の以下の場所から値を設定してください。
 
 ```bash
