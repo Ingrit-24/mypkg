@@ -29,3 +29,16 @@ status=$?
 cat /tmp/mypkg.log | grep 'graph_c get delta_t success: 0.25'
 status=$?  
 [ "$status" = "0" ] || exit 1
+
+cat /tmp/mypkg.log | grep 'VR:'
+status=$?  
+[ "$status" = "0" ] || exit 1
+cat /tmp/mypkg.log | grep 'VL:'
+status=$?  
+[ "$status" = "0" ] || exit 1
+cat /tmp/mypkg.log | grep 'X:'
+status=$?  
+[ "$status" = "0" ] || exit 1
+cat /tmp/mypkg.log | grep 'Y:'
+status=$?  
+[ "$status" = "0" ] || exit 1
