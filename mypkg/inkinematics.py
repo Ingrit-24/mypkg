@@ -1,4 +1,4 @@
-# Copyright 2025 Shogo Takizawa
+# Copyright 202 Shogo Takizawa
 # SPDX-License-Identifier: BSD-3-Clause
 
 import rclpy
@@ -58,7 +58,7 @@ class Inkinematics(Node):
         outputs.data = [float(ans[0]), float(ans[1])]
         self.pub.publish(outputs)
         
-        self.get_logger().info(f"{ans[0]} | {str(ans[1])}")
+        self.get_logger().info(f"VR:{ans[0]:3f}|VL:{ans[1]:3f}")
         
         self.derection_p=self.derection_n
         self.data_p[0]=self.data_n[0]

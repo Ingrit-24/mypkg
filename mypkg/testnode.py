@@ -24,13 +24,12 @@ class Test(Node):
         out.x=x
         out.y=y
         self.pub.publish(out)
-        self.n+=1
         
         right=200
         left=175
-        out=Float32MultiArray()
-        out.data=[float(right),float(left)]
-        self.pub2.publish(out)
+        out2=Float32MultiArray()
+        out2.data=[float(right),float(left)]
+        self.pub2.publish(out2)
         self.n+=1
         
 def main():
