@@ -36,7 +36,7 @@ class Odometry(Node):
         
         self.x+=np.cos(self.derection+d_theta/2.0)*v*self.dt
         self.y+=np.sin(self.derection+d_theta/2.0)*v*self.dt
-        self.get_logger().info(f'{self.x}  {self.y}')
+        self.get_logger().info(f'X:{self.x:3f}|Y:{self.y:3f}')
         
         
         out = Point()

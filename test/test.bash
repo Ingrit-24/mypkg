@@ -9,7 +9,7 @@ dir=~
 cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
-timeout 10 ros2 launch mypkg test1.launch.py > /tmp/mypkg.log
+timeout 10 ros2 launch mypkg test.launch.py > /tmp/mypkg.log
 
 cat /tmp/mypkg.log | grep 'inkinematics get delta_t success: 0.25'
 status=$?  
