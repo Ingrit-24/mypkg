@@ -39,6 +39,19 @@ para=[{
                 'wheel_dist':150.0,
             }] 
 ```
+- 実行例
+```bash
+$ ros2 launch mypkg inkinematics_graph.launch.py
+  　　　　　　　　　・
+  　　　　　　　　　・
+　  　　　　　　　　・
+[inkinematics-1] [INFO] [1768042435.675563607] [inkinematics]: inkinematics get delta_t success: 0.5
+[inkinematics-1] [INFO] [1768042435.675997675] [inkinematics]: inkinematics get wheel_dist success: 150.0
+[graph_v-2] [INFO] [1768042435.900317954] [graph_v]: graph_v get delta_t success: 0.5
+[inkinematics-1] [INFO] [1768042507.510369139] [inkinematics]: VR:0.000000|VL:0.000000
+[inkinematics-1] [INFO] [1768042508.000842425] [inkinematics]: VR:109.426184|VL:90.953569
+[inkinematics-1] [INFO] [1768042508.502301559] [inkinematics]: VR:119.831736|VL:83.546702
+```
 ## ノードの連携について
 - 各ノードの連携の例は次のようなものです。
 ```bash
@@ -57,12 +70,12 @@ para=[{
 - このパッケージのノードはロボットの初期位置(0,0)・初期姿勢ｘ軸正の方向であるものとして計算されています。
 ## 必要なソフトウェア
 - Python
-- ROS2 Jazzy Jalisco
+- ROS 2 Humble
 ## 依存ライブラリ
 - NumPy
 - matplotlib
 ## テスト環境
-- Ubuntu 24.04 LTS
+- Ubuntu 22.04 LTS
 
 ## ライセンス
 - このROS2パッケージは、**三条項BSDライセンスの下**、再配布及び使用が許可されます。
